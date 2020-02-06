@@ -27,7 +27,7 @@ The possibility of adding a Great Code Optimization proposed by Valentin Simonov
 
 1- Download the code and extract the assets carefully inside a new project's Assets folder.
 
-2- Go to: <strong>Build Settings</strong> and 'Add all Scenes' inside the <strong>'Assets\_Scenes\_MyUltimateUnity3DGameTemplate'</strong> Folder. The right order is: 
+2- Go to: <strong>Build Settings</strong> and 'Add all Scenes' inside the 'Assets\_Scenes\_MyUltimateUnity3DGameTemplate' Folder. The right order is: 
 
   2.1- Number '0' is 'Scene0Laucher' (this is the empty initial Scene). This Scene creates the Main Camera and the GameManager GameObjects, which will not be destroyed even if you change Scenes with Code inside the Game (thus allowing you to Save Game and Menus State in variables across all the App).
   
