@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine.UI;
 
@@ -28,8 +29,8 @@ public class ClickToLoadAsyncCoroutine : MonoBehaviour
     /// <summary>
     /// This Method Loads Level AND LOADING SLIDER - BAR.
     /// </summary>
-    /// <param name="level"></param>
-    public void ClickAsyncLoadLevel1(int level)
+    /// <param name="sceneNumber"></param>
+    public void ClickAsyncLoadScene(int sceneNumber)
     {
         ///_myLoadingImage.SetActive(true); // This is SubOptimal.
         // Set the image as: Active.
@@ -44,18 +45,21 @@ public class ClickToLoadAsyncCoroutine : MonoBehaviour
         //
         // Setear Variables para INICIAR JUEGO, desde MENU PRINICPAL:
         //
-        GameManager.gm.ElegirGameStartDesdeMenuPrincipal();
+        GameManager.gm.ElegirOpcionDesdeOHaciaMenuPrincipal(sceneNumber);
         //
         // This Method Loads Level AND LOADING SLIDER - BAR:
         //
-        StartCoroutine(LoadLevelWithBar(level));
+        StartCoroutine(LoadLevelWithBar(sceneNumber));
 
     }//End Method
 
 
     IEnumerator LoadLevelWithBar (int level)
     {
-        _myAsyncOperation = Application.LoadLevelAsync(level);
+        //Deprecated code: _myAsyncOperation = Application.LoadLevelAsync(level);
+        //
+        this._myAsyncOperation = SceneManager.LoadSceneAsync(level);
+
         while (!_myAsyncOperation.isDone)
         {
             _myLoadingBar.value = _myAsyncOperation.progress;

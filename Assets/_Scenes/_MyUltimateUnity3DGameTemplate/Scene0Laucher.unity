@@ -326,7 +326,7 @@ GameObject:
   - component: {fileID: 673410222}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -343,9 +343,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 383da91e9dab31c4eaf53fbf9f189d3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mainGameState: 0
+  _mainAppGameState: 0
   _gameStateWhenInMenus: 0
-  _gameStateWhenPlaying: 1
+  _gameStateWhenPlaying: 0
   restartGameButtons: {fileID: 0}
 --- !u!4 &673410221
 Transform:

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class LoadAdditive : MonoBehaviour
@@ -6,7 +7,16 @@ public class LoadAdditive : MonoBehaviour
 
     public void LoadAddOnClick(int level)
     {
-        Application.LoadLevelAdditive(level);
+
+        // Deprecated code: //Application.LoadLevelAdditive(level);
+
+        // Setear Variables de ESTADO DEL JUEGO y del MENU:
+        //
+        GameManager.gm.ElegirOpcionDesdeOHaciaMenuPrincipal(level);
+        //
+        //Application.LoadLevel(level);  // Deprecated code
+        //
+        SceneManager.LoadScene(level);
 
     }//End Method
 

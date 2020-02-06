@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 using UnityEngine.UI;
 
@@ -21,7 +22,12 @@ public class ClickToLoadAsync : MonoBehaviour
 
     IEnumerator LoadLevelWithBar (int level)
     {
-        _myAsyncOperation = Application.LoadLevelAsync(level);
+        // DEPRECATED CODE:  // this._myAsyncOperation = Application.LoadLevelAsync(level);
+
+        //Application.LoadLevel(level);  // Deprecated code
+        //
+        SceneManager.LoadScene(level);
+
         while (!_myAsyncOperation.isDone)
         {
             _myLoadingBar.value = _myAsyncOperation.progress;

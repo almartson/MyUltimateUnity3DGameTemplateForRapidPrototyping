@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// This class allows us to load a scene when clicked.
@@ -23,6 +24,12 @@ public class LoadOnClick : MonoBehaviour
 
         }//End if
         //
-        Application.LoadLevel(level);
+        // Setear Variables de ESTADO DEL JUEGO y del MENU:
+        //
+        GameManager.gm.ElegirOpcionDesdeOHaciaMenuPrincipal(level);
+        //
+        //Application.LoadLevel(level);  // Deprecated code
+        //
+        SceneManager.LoadScene(level);
     }
 }

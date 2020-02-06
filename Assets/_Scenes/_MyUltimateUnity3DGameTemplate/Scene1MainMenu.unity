@@ -1497,7 +1497,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1461491350}
-        m_MethodName: ClickAsync
+        m_MethodName: ClickAsyncLoadScene
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1522,7 +1522,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: cf7ce50422d8b0d49b8989c12c6198dd, type: 2}
-  m_Color: {r: 0.47794116, g: 0.47794116, b: 0.47794116, a: 0.9}
+  m_Color: {r: 0.47843137, g: 0.47843137, b: 0.47843137, a: 0.9}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

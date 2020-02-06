@@ -13,10 +13,11 @@ public class GameManager : MonoBehaviour
     /// <summary>
     /// Estados del Juego Globales, por encima de todo.
     /// </summary>
-    public enum _GAME_STATES { MainMenu, Playing, BeatLevel, Death, GameOver };
+    public enum _GAME_STATES { Menu, Playing, BeatLevel, Death, GameOver };
 
     /// <summary>
-    /// Estados del Juego particulares: durante el ""gameState"": PLAYING.
+    /// Estados del Juego particulares: durante el ""gameState"": en un MENU.
+    ///   Acá se colocan todos los TIPOS de MENU, con el fin de poder setear los valores de las Variables según las OPciones elegidas por el usuario.
     /// </summary>
     public enum _GAME_STATES_WHEN_IN_MENUS { InMainMenu, InSubMenuScreenResolutionOptions1, InSubMenuGameDificultyOptions1, InSubMenuLevel1, StartingTheGameInitialization , NotInAnyMenu  /* Implement it only if your Design Philosophy asks for it */ };
 
@@ -24,14 +25,14 @@ public class GameManager : MonoBehaviour
     /// <summary>
     /// Estados del Juego particulares: durante el ""gameState"": PLAYING.
     /// </summary>
-    public enum _GAME_STATES_WHEN_PLAYING { InicializacionFinalVariables, PreparandoVariablesParaMiTurnoPartida, /*EsperandoPorAnimacionPeligroDeTerminarJuego,*/ /*EsperandoPorGUIRoundNumero, PorChutar, Chutando, CelebracionGol, CelebracionNoEsGol, AnimacionChutadorGol, AnimacionChutadorNoEsGol, AnimacionPorteroParadaExitosa, AnimacionPorteroFallo, AnimacionInicioSuddenDeath*/ /* NO SE USARÁN:  , AntesDePortear, Porteando */ };
+    public enum _GAME_STATES_WHEN_PLAYING { InicializacionFinalVariables, PreparandoVariablesParaMiTurnoPartida, NotPlaying /*EsperandoPorAnimacionPeligroDeTerminarJuego,*/ /*EsperandoPorGUIRoundNumero, PorChutar, Chutando, CelebracionGol, CelebracionNoEsGol, AnimacionChutadorGol, AnimacionChutadorNoEsGol, AnimacionPorteroParadaExitosa, AnimacionPorteroFallo, AnimacionInicioSuddenDeath*/ /* NO SE USARÁN:  , AntesDePortear, Porteando */ };
 
 
     /// <summary>
     /// Estado Global del Juego.
     /// </summary>
     [Tooltip("Estado Global del Juego.")]
-    public _GAME_STATES _mainGameState = _GAME_STATES.Playing;
+    public _GAME_STATES _mainAppGameState = _GAME_STATES.Menu;
 
 
     /// <summary>
@@ -101,12 +102,12 @@ public class GameManager : MonoBehaviour
     void Update()
     {
 
-        switch (this._mainGameState)
+        switch (this._mainAppGameState)
         {
 
             // Estado dentro del MAIN MENU (Menú Principal):
             //
-            case _GAME_STATES.MainMenu:
+            case _GAME_STATES.Menu:
 
 
                 // Al estar JUGANDO casos:
@@ -213,11 +214,11 @@ public class GameManager : MonoBehaviour
 
             default:
 
-                Debug.LogError("ESTADO NO ESPERADO (para switch (this._mainGameState)), EN GameManager!");
+                Debug.LogError("ESTADO NO ESPERADO (para switch (this._mainAppGameState)), EN GameManager!");
 
                 break;
 
-        }//End switch (this._mainGameState)
+        }//End switch (this._mainAppGameState)
 
     }//End Update
 
@@ -228,19 +229,46 @@ public class GameManager : MonoBehaviour
     //*****************MENUS***************INICIO***************//
     #region MENUS
 
+
     /// <summary>
-    /// Setea las Variaables de Estado para poder Iniciar Juego, a partir del Main Menu (Principal).
+    /// Setea las Variaables de Estado para poder Elegir una Opción que transporta a otra SCENE de Unity, a partir del Main Menu (Principal).
     /// </summary>
-    public void ElegirGameStartDesdeMenuPrincipal()
+    public void ElegirOpcionDesdeOHaciaMenuPrincipal( int buildSettedScene )
     {
 
-        Debug.Log("ElegirGameStartDesdeMenuPrincipal ha sido invocado");
+        Debug.Log("ElegirOpcionDesdeOHaciaMenuPrincipal ha sido invocado");
 
-        // Setear la variable de ESTADO al !JUGAR!:
-        //
-        this._mainGameState = _GAME_STATES.Playing;
-        this._gameStateWhenInMenus = _GAME_STATES_WHEN_IN_MENUS.StartingTheGameInitialization;
-        this._gameStateWhenPlaying = _GAME_STATES_WHEN_PLAYING.PreparandoVariablesParaMiTurnoPartida;
+        switch (buildSettedScene)
+        {
+
+            case 1:     // Irse a SCENE de valor (Build Settings) = '1' =>    Sub-Menu 1.
+
+                // Setear la variable de ESTADO al MAIN MENU:  1:
+                //
+                this._mainAppGameState = _GAME_STATES.Menu;
+                this._gameStateWhenInMenus = _GAME_STATES_WHEN_IN_MENUS.InMainMenu;
+                this._gameStateWhenPlaying = _GAME_STATES_WHEN_PLAYING.NotPlaying;
+
+                break;
+
+
+            case 2:     // Irse a SCENE de valor (Build Settings) = '2' =>    Level 1  (GAME START!).
+
+                // Setear la variable de ESTADO al !JUGAR!:
+                //
+                this._mainAppGameState = _GAME_STATES.Playing;
+                this._gameStateWhenInMenus = _GAME_STATES_WHEN_IN_MENUS.StartingTheGameInitialization;
+                this._gameStateWhenPlaying = _GAME_STATES_WHEN_PLAYING.PreparandoVariablesParaMiTurnoPartida;
+
+                break;
+
+                //.......................agregar otros CASOS de MENU, acá!............................
+
+            default:
+
+                break;
+
+        }//End witch
 
     }//End Method
 

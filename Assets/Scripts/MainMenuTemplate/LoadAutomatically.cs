@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// This class allows us to load a scene automatically, in a certain programmed moment.
@@ -33,7 +34,16 @@ public class LoadAutomatically : MonoBehaviour
     /// </summary>
     public void LoadScene()
     {
-        Application.LoadLevel(  this._myLevel );
+        // DEPRECATED CODE:     // Application.LoadLevel(this._myLevel);
+
+        // Setear Variables de ESTADO DEL JUEGO y del MENU:
+        //
+        GameManager.gm.ElegirOpcionDesdeOHaciaMenuPrincipal(this._myLevel);
+        //
+        //Application.LoadLevel(level);  // Deprecated code
+        //
+        SceneManager.LoadScene(this._myLevel);
+        
     }//End Method
 
     #endregion Custom Methods
