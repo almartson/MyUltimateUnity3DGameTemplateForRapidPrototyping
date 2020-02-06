@@ -19,7 +19,7 @@ It has a Game Manager Script (Class) based on 'Switch - Case' with ENUM game sta
 #####  3- OneThousandCustomUpdateCalls
 [ https://github.com/almartson/OneThousandCustomUpdateCalls ]
 
-The possibility of adding a Great Code Optimization proposed by Valentin Simonov, of Unity Technologies, in his publication in December 23, 2015: '10000 Update() calls' (https://blogs.unity3d.com/en/2015/12/23/1k-update-calls/). The optimization itself is in a separate Scene, and inside a Folder in a path defined as: '\Assets_Scenes\ThousandUpdateCallsOptimization'. It can be added to the Main Game Scene by reading and understanding the theory behind the blog article.
+The possibility of adding a Great Code Optimization proposed by Valentin Simonov, of Unity Technologies, in his publication in December 23, 2015: <strong>'10000 Update() calls'</strong> (https://blogs.unity3d.com/en/2015/12/23/1k-update-calls/). The optimization itself is in a separate Scene, and inside a Folder in a path defined as: '\Assets_Scenes\ThousandUpdateCallsOptimization'. It can be added to the Main Game Scene by reading and understanding the theory behind the blog article.
 
 ********************************
 
@@ -27,7 +27,7 @@ The possibility of adding a Great Code Optimization proposed by Valentin Simonov
 
 1- Download the code and extract the assets carefully inside a new project's Assets folder.
 
-2- Go to: Build Settings and 'Add all Scenes' inside the 'Assets\_Scenes\_MyUltimateUnity3DGameTemplate' Folder. The right order is: 
+2- Go to: Build Settings and 'Add all Scenes' inside the <strong>'Assets\_Scenes\_MyUltimateUnity3DGameTemplate'</strong> Folder. The right order is: 
 
   2.1- Number '0' is 'Scene0Laucher' (this is the empty initial Scene). This Scene creates the Main Camera and the GameManager GameObjects, which will not be destroyed even if you change Scenes with Code inside the Game (thus allowing you to Save Game and Menus State in variables across all the App).
   
@@ -38,6 +38,7 @@ The possibility of adding a Great Code Optimization proposed by Valentin Simonov
 
 I really hope you find it useful.
 If someone manages to make an interesting and fun video game from this code, let me know, because that would make my day.
+
 Peace.
 
 AlMartson
