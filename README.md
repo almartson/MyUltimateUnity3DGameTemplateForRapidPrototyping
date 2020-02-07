@@ -40,8 +40,8 @@ I am using the Library in the Script named: 'ShowSliderValueTMP.cs', to Concat t
 
 2- Go to: <strong>Build Settings</strong> and 'Add all Scenes' inside the 'Assets\_Scenes\_MyUltimateUnity3DGameTemplate' Folder. The right order is: 
 
-  2.1- Number '0' is 'Scene0Laucher' (this is the empty initial Scene). This Scene creates the Main Camera and the GameManager GameObjects, which will not be destroyed even if you change Scenes with Code inside the Game (thus allowing you to Save Game and Menus State in variables across all the App).
-  
+  2.1- Number '0' is 'Scene0Laucher' (this is the empty initial Scene). This Scene creates the Main Camera and the GameManager GameObjects, which will not be destroyed even if you change Scenes with Code inside the Game (thus allowing you to Save Game and Menus State in variables across all the App). <strong>You must start the game from this scene.</strong>
+
   2.2- Number '1' is 'Scene1MainMenu' (this is the Scene featuring the 'Main Menu' GUI).
 
   2.3- Number '2' is 'Scene2SubMenu' (this Scene is a Sub-Menu, added as an Example. You could even replace it with: your Main Game Scene, with you 'Level_1' Scene, etc.).
