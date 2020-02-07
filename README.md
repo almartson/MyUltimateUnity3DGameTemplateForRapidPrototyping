@@ -30,7 +30,7 @@ The possibility of adding a Great Code Optimization proposed by Valentin Simonov
 
 I am using the Library in the Script named: 'ShowSliderValueTMP.cs', to Concat two Strings in the Loading Slider Bar (the 'number' and the '%').
 
-Hope you find it useful.
+* The Main discussion of this Library is in an Unity Forum: https://forum.unity.com/threads/gstring-gc-free-string-for-unity.338588/
 
 ********************************
 
