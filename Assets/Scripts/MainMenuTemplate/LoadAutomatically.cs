@@ -38,7 +38,7 @@ public class LoadAutomatically : MonoBehaviour
 
         // Setear Variables de ESTADO DEL JUEGO y del MENU:
         //
-        GameManager.gm.ElegirOpcionDesdeOHaciaMenuPrincipal(this._myLevel);
+        GameManager._gm.ElegirOpcionDesdeOHaciaMenuPrincipal(this._myLevel);
         //
         //Application.LoadLevel(level);  // Deprecated code
         //

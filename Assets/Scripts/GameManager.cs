@@ -1,4 +1,5 @@
 using UnityEngine;
+//using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -6,7 +7,7 @@ public class GameManager : MonoBehaviour
     #region Attributes
 
     // make game manager public static so can access this from other scripts
-    public static GameManager gm;
+    public static GameManager _gm;
 
     #region Estados de Juego
 
@@ -68,6 +69,19 @@ public class GameManager : MonoBehaviour
     [Tooltip("Buttons to restart the game to Level One")]
     public GameObject restartGameButtons;
 
+
+    #region GUI elements
+
+    // Ejemplo:::::::::
+    ///// <summary>
+    ///// GUI, TEXTO DE TextMeshPRO: Porcentaje de carga (load) al cargar el Juego, desde el MAIN MENU (para ser mostrado en la GUI).
+    ///// </summary>
+    //[Tooltip("GUI, TEXTO DE TextMeshPRO: Porcentaje de carga (load) al cargar el Juego, desde el MAIN MENU (para ser mostrado en la GUI).")]
+    //public TextMeshProUGUI _miPorcentajeDeCargaGUIMenuLoadingSlideBar;
+
+
+    #endregion GUI elements
+
     #endregion Attributes
 
 
@@ -77,14 +91,14 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         // get a reference to the GameManager component for use by other scripts
-        if (gm == null)
+        if (_gm == null)
         {
-            gm = this.gameObject.GetComponent<GameManager>();
+            _gm = this.gameObject.GetComponent<GameManager>();
 
-        }//End if (gm == null)
+        }//End if (_gm == null)
 
 
-        Debug.Log("AWAKE() have been executed, in: GAME MANAGER.");
+        /////Debug.Log("AWAKE() have been executed, in: GAME MANAGER.");
 
     }//End Awake Method
 
@@ -93,7 +107,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
 
-        Debug.Log("START() have been executed, in: GAME MANAGER.");
+        /////Debug.Log("START() have been executed, in: GAME MANAGER.");
 
     }//End Start
 
@@ -127,11 +141,11 @@ public class GameManager : MonoBehaviour
 
                         // Capture Mouse Input Click:
                         //
-                        if (Input.GetMouseButtonDown(0))
-                        {
-                            Debug.Log("Pressed primary button.");
+                        //if (Input.GetMouseButtonDown(0))
+                        //{
+                        //    //Debug.Log("Pressed primary button.");
 
-                        }//End if (Input.GetMouseButtonDown(0))                        
+                        //}//End if (Input.GetMouseButtonDown(0))
 
                         break;
 
@@ -172,13 +186,13 @@ public class GameManager : MonoBehaviour
                     case _GAME_STATES_WHEN_PLAYING.PreparandoVariablesParaMiTurnoPartida:
 
 
-                        // Capture Mouse Input Click:
-                        //
-                        if (Input.GetMouseButtonDown(0))
-                        {
-                            Debug.Log("Pressed primary button.");
+                        //// Capture Mouse Input Click:
+                        ////
+                        //if (Input.GetMouseButtonDown(0))
+                        //{
+                        //    //Debug.Log("Pressed primary button.");
 
-                        }//End if (Input.GetMouseButtonDown(0))
+                        //}//End if (Input.GetMouseButtonDown(0))
 
                         break;
 
@@ -236,7 +250,7 @@ public class GameManager : MonoBehaviour
     public void ElegirOpcionDesdeOHaciaMenuPrincipal( int buildSettedScene )
     {
 
-        Debug.Log("ElegirOpcionDesdeOHaciaMenuPrincipal ha sido invocado");
+        //Debug.Log("ElegirOpcionDesdeOHaciaMenuPrincipal ha sido invocado");
 
         switch (buildSettedScene)
         {

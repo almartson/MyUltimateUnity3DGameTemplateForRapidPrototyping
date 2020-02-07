@@ -26,7 +26,7 @@ Material:
     - _DetailTex:
         m_Texture: {fileID: 2800000, guid: 30db500b226a8014e82f9e1e39a78e15, type: 3}
         m_Scale: {x: 1, y: 1}
-        m_Offset: {x: -114.81, y: 0}
+        m_Offset: {x: -55.05503, y: 0}
     - _MainBump:
         m_Texture: {fileID: 2800000, guid: 91207f32a007d429180caa8fce010afd, type: 3}
         m_Scale: {x: 1, y: 1}

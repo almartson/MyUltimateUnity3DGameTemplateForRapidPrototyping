@@ -45,7 +45,7 @@ public class ClickToLoadAsyncCoroutine : MonoBehaviour
         //
         // Setear Variables para INICIAR JUEGO, desde MENU PRINICPAL:
         //
-        GameManager.gm.ElegirOpcionDesdeOHaciaMenuPrincipal(sceneNumber);
+        GameManager._gm.ElegirOpcionDesdeOHaciaMenuPrincipal(sceneNumber);
         //
         // This Method Loads Level AND LOADING SLIDER - BAR:
         //

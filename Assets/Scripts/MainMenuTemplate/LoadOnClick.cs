@@ -26,7 +26,7 @@ public class LoadOnClick : MonoBehaviour
         //
         // Setear Variables de ESTADO DEL JUEGO y del MENU:
         //
-        GameManager.gm.ElegirOpcionDesdeOHaciaMenuPrincipal(level);
+        GameManager._gm.ElegirOpcionDesdeOHaciaMenuPrincipal(level);
         //
         //Application.LoadLevel(level);  // Deprecated code
         //

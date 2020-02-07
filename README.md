@@ -21,6 +21,17 @@ It has a Game Manager Script (Class) based on 'Switch - Case' with ENUM game sta
 
 The possibility of adding a Great Code Optimization proposed by Valentin Simonov, of Unity Technologies, in his publication in December 23, 2015: <strong>'10000 Update() calls'</strong> (https://blogs.unity3d.com/en/2015/12/23/1k-update-calls/). The optimization itself is in a separate Scene, and inside a Folder in a path defined as: '\Assets\_Scenes\ThousandUpdateCallsOptimization'. It can be added to the Main Game Scene by reading and understanding the theory behind the blog article.
 
+
+###### Notes:
+
+* I also added an excellent piece of code from GitHub, to manage Strings with no Garbage Allocations. The Author is someone to be respected because of his talent as a Programmer (Vexe). His Main Project Repo is: https://github.com/vexe/gstring
+
+<strong>You can find an Example using the Scene named: 'GCFreeStringTest'.</strong>
+
+I am using the Library in the Script named: 'ShowSliderValueTMP.cs', to Concat two Strings in the Loading Slider Bar (the 'number' and the '%').
+
+Hope you find it useful.
+
 ********************************
 
 ## How to use it?
