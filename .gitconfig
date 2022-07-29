@@ -3,4 +3,4 @@ tool = unityyamlmerge
 
 [mergetool "unityyamlmerge"]
 trustExitCode = false
-cmd = 'C:\Program Files\Unity\Editor\Data\Tools\UnityYAMLMerge.exe' merge -p "$BASE" "$REMOTE" "$LOCAL" "$MERGED"
+cmd = '/aainstall/aainstalados/Apps/Unity/Hub/Editor/2020.3.36f1/Editor/Data/Tools/UnityYAMLMerge' merge -p "$BASE" "$REMOTE" "$LOCAL" "$MERGED"
